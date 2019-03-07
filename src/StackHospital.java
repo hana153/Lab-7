@@ -1,3 +1,5 @@
+import java.util.Stack;
+
 /**
  * 
  * @author Hana Stevenson
@@ -7,51 +9,53 @@
 public class StackHospital<PatientType> extends Hospital<PatientType>
 {
 
+    private Stack<PatientType> waitList;
+    
     public StackHospital()
     {
-        
+        waitList= new Stack<PatientType>();
     }
     
     @Override
     public void addPatient(PatientType patient)
     {
-        // TODO Auto-generated method stub
-        
+        waitList.push(patient);
     }
 
     @Override
     public PatientType nextPatient()
     {
-        // TODO Auto-generated method stub
-        return null;
+        return waitList.peek();
     }
 
     @Override
     public PatientType treatNextPatient()
     {
-        // TODO Auto-generated method stub
-        return null;
+        return waitList.pop();
     }
 
     @Override
     public int numPatients()
     {
-        // TODO Auto-generated method stub
-        return 0;
+        return waitList.size();
     }
 
     @Override
     public String hospitalType()
     {
-        // TODO Auto-generated method stub
-        return null;
+        return "StackHospital";
     }
 
     @Override
     public String allPatientInfo()
     {
-        // TODO Auto-generated method stub
-        return null;
+         String result = "";
+         for (int i = 0; i < waitList.size(); ++i)
+         {
+             result += waitList.get(i);
+         }
+         return result;
+         
     }
 
 }
