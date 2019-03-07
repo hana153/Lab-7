@@ -13,6 +13,7 @@ public class HealthyPerson extends Person
     @Override
     protected int compareToImpl(Person p)
     {
+        
         compareTo(p);
         return 0;
     }
