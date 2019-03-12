@@ -14,14 +14,19 @@ public class HealthyPerson extends Person
     protected int compareToImpl(Person p)
     {
         
-        compareTo(p);
-        return 0;
+        if(p instanceof HealthyPerson) {
+            return (this.getName()).compareTo(p.getName());
+        }
+        else 
+        {
+            return 0;
+        }
     }
     
     @Override
     public String toString()
     {
-        return String.format("%s In for %s", toString(), reason);
+        return String.format("%s In for %s", getName(), reason);
     }
 
 }

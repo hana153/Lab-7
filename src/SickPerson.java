@@ -13,14 +13,19 @@ public class SickPerson extends Person
     @Override
     protected int compareToImpl(Person p)
     {
-        compareTo(p);
-        return 0;
+        if(p instanceof SickPerson) {
+            return (this.getName()).compareTo(p.getName());
+        }
+        else 
+        {
+            return 0;
+        }
     }
     
     @Override
     public String toString()
     {
-        return String.format("%s Severity level %d", toString(), severity);
+        return String.format("%s Severity level %d", getName(), severity);
     }
     
 
