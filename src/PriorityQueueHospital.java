@@ -4,12 +4,12 @@ public class PriorityQueueHospital<PatientType> extends Hospital<PatientType>
 {
 
     private PriorityQueue<PatientType> waitList;
-    
+
     public PriorityQueueHospital()
     {
         waitList = new PriorityQueue<PatientType>();
     }
-    
+
     @Override
     public void addPatient(PatientType patient)
     {

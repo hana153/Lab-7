@@ -3,7 +3,7 @@ public class HealthyPerson extends Person
 {
 
     private String reason;
-    
+
     public HealthyPerson(String name, int age, String reason)
     {
         super(name, age);
@@ -13,16 +13,16 @@ public class HealthyPerson extends Person
     @Override
     protected int compareToImpl(Person p)
     {
-        
-        if(p instanceof HealthyPerson) {
+
+        if (p instanceof HealthyPerson)
+        {
             return (this.getName()).compareTo(p.getName());
-        }
-        else 
+        } else
         {
             return 0;
         }
     }
-    
+
     @Override
     public String toString()
     {

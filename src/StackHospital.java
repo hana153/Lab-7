@@ -10,12 +10,12 @@ public class StackHospital<PatientType> extends Hospital<PatientType>
 {
 
     private Stack<PatientType> waitList;
-    
+
     public StackHospital()
     {
-        waitList= new Stack<PatientType>();
+        waitList = new Stack<PatientType>();
     }
-    
+
     @Override
     public void addPatient(PatientType patient)
     {
@@ -49,13 +49,13 @@ public class StackHospital<PatientType> extends Hospital<PatientType>
     @Override
     public String allPatientInfo()
     {
-         String result = "";
-         for (int i = 0; i < waitList.size(); ++i)
-         {
-             result += waitList.get(i);
-         }
-         return result;
-         
+        String result = "";
+        for (int i = 0; i < waitList.size(); ++i)
+        {
+            result += waitList.get(i);
+        }
+        return result;
+
     }
 
 }

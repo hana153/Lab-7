@@ -1,16 +1,17 @@
 import java.util.LinkedList;
 
-public class QueueHospital<PatientType> extends Hospital <PatientType>
+public class QueueHospital<PatientType> extends Hospital<PatientType>
 {
 
     private LinkedList<PatientType> waitList;
-    
+
     // constructor to initialize waitList
-    public QueueHospital() 
+    public QueueHospital()
     {
-       waitList = new LinkedList<PatientType>();
-        
+        waitList = new LinkedList<PatientType>();
+
     }
+
     @Override
     public void addPatient(PatientType patient)
     {
@@ -45,7 +46,8 @@ public class QueueHospital<PatientType> extends Hospital <PatientType>
     public String allPatientInfo()
     {
         String result = "";
-        for (int i = 0; i < waitList.size(); ++i) {
+        for (int i = 0; i < waitList.size(); ++i)
+        {
             result += waitList.get(i);
         }
         return result;
