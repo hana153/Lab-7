@@ -1,6 +1,6 @@
 import java.util.PriorityQueue;
 
-public class PriorityQueueHospital<PatientType> extends Hospital<PatientType>
+public class PriorityQueueHospital<PatientType extends Comparable> extends Hospital<PatientType>
 {
 
     private PriorityQueue<PatientType> waitList;

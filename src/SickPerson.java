@@ -13,10 +13,20 @@ public class SickPerson extends Person
     @Override
     protected int compareToImpl(Person p)
     {
-        if (p instanceof SickPerson)
-        {
-            return (this.getName()).compareTo(p.getName());
-        } else
+        if (p instanceof SickPerson) {
+            int otherSeverity = ((SickPerson) p).severity;
+            if (this.severity > otherSeverity)
+            {
+                return -5;
+            } else if (this.severity < otherSeverity)
+            {
+                return 5;
+            } else
+            {
+                return 0;
+            }
+        }
+        else 
         {
             return 0;
         }
@@ -25,7 +35,7 @@ public class SickPerson extends Person
     @Override
     public String toString()
     {
-        return String.format("%s Severity level %d", getName(), severity);
+        return String.format("%s Severity level %d", super.toString(), severity);
     }
 
 }

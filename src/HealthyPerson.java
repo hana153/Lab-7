@@ -26,7 +26,7 @@ public class HealthyPerson extends Person
     @Override
     public String toString()
     {
-        return String.format("%s In for %s", getName(), reason);
+        return String.format("%s In for %s", super.toString(), reason);
     }
 
 }
